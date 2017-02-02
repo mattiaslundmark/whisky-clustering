@@ -41,7 +41,7 @@ print(whiskies)
 
 cost_array = np.zeros(20)
 
-for i in xrange(1,20):
+for i in range(1,20):
     km = KMeans(i, init='k-means++', max_iter=100, n_init=1, verbose=True)
     cost = km.fit(whiskies)
     cost_array[i] = cost.inertia_
@@ -59,7 +59,7 @@ print(cost.cluster_centers_)
 
 clusters = np.zeros(nbr_clusters)
 fig = pl.figure()
-for c in xrange(nbr_clusters):
+for c in range(nbr_clusters):
     cluster_members = cost.labels_ == c
     pl.plot(whiskies_pca[cluster_members, 0], whiskies_pca[cluster_members, 1], 'o')
     print("Members of cluster %d" % c)
